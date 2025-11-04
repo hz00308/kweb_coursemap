@@ -12,10 +12,9 @@ function Home() {
           </div>
         </div>
         <div className="main">
-          <NavLink to="/coursemap/cs"><button className="department">컴퓨터학과</button></NavLink>
-          <NavLink to="/coursemap/ds"><button className="department">데이터과학과</button></NavLink>
-          <NavLink to="/"><button className="department"></button></NavLink>
-          {/* html a 안에 html button을 넣는 건 valid html이 아니므로 수정 필요 */}
+          <NavLink to="/coursemap/cs" className="department">컴퓨터학과</NavLink>
+          <NavLink to="/coursemap/ds" className="department">데이터과학과</NavLink>
+          <NavLink to="/" className="department"></NavLink>
         </div>
       </div>
     );

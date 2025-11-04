@@ -40,15 +40,19 @@
 }
 
 .department {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f1f1f1;
   border: none;
-  padding: 1rem 1.5rem;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 150px;
   min-height: 60px;
+  text-decoration: none;
+  color: black;
 }
 
 .department:hover {
