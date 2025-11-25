@@ -1,16 +1,11 @@
-import { NavLink } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import DiagramCS from "./diagram-cs";
+import Header from "../components/Header";
 
 function CoursemapCS() {
   return (
     <div className="container">
-      <div className="header">
-        <NavLink to="/" className="title">정보대학 이수체계도</NavLink>
-        <div className="auth">
-          <NavLink to="/login">로그인</NavLink>
-          <NavLink to="/signup">회원가입</NavLink>
-        </div>
-      </div>
+      <Header />
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',

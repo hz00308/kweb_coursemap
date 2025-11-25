@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router'
+import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import CoursemapCS from './pages/coursemap-cs'
 import CoursemapDS from './pages/coursemap-ds'

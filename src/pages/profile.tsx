@@ -1,18 +1,28 @@
-import { NavLink } from 'react-router'
-import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import './profile.css'
+import Header from "../components/Header";
 
 function Profile() {
-    {/*일단 닉네임, 아이디 구분 여부가 불확실하므로 닉네임==아이디라고 생각하고 닉네임만 작성함*/}
-    const [username, setUsername] = useState("myusername"); // 추후 실제 아이디 받아와서 사용
-    const [nickname, setNickname] = useState("cose22"); // 추후 실제 닉네임 받아와서 사용
+    const [username, setUsername] = useState<string | null>(null);
+    const [nickname, setNickname] = useState<string | null>(null);
     const [comments, setComments] = useState(["예시 데이터1", "예시 데이터2", "예시 데이터3", "예시 데이터4", "예시 데이터5"]); // 추후 실제 댓글 목록 받아와서 사용
+    
+    useEffect(() => {
+        const storedUsername = localStorage.getItem("username");
+        const storedNickname = localStorage.getItem("nickname");
+
+        if (storedUsername) setUsername(storedUsername);
+        if (storedNickname) setNickname(storedNickname);
+
+        // 없으면 더미데이터 (UI 점검용)
+        if (!storedUsername) setUsername("dummy_username");
+        if (!storedNickname) setNickname("더미더미");
+    }, []);
+    
     return (
       <div className="container">
-        <div className="header">
-          <NavLink to="/" className="title">정보대학 이수체계도</NavLink>
-          <div className="nickname">{nickname} 님</div>
-        </div>
+        <Header />
         <div className="profile-main">
           <div className="profile-section">
             <div className="profile-title">내 프로필</div>
