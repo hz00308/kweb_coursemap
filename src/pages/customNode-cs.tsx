@@ -3,7 +3,7 @@ import { Handle, Position, NodeToolbar } from '@xyflow/react'
 import type { Node, NodeProps } from '@xyflow/react'
 import './customNode.css'
 
-import MapPinButton from './MapPinIcon'
+import MapPinButton from './mapPinIcon'
 
 type InfoNode = Node<{ label: string, preRequisite: string[], postRequisite: string[], displayMode: number, isSelected: boolean }, 'info'>;
 
