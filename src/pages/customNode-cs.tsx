@@ -3,8 +3,7 @@ import { Handle, Position, NodeToolbar } from '@xyflow/react'
 import type { Node, NodeProps } from '@xyflow/react'
 import './customNode.css'
 
-
-type InfoNode = Node<{ label: string, preRequisite: string[], postRequisite: string[] }, 'info'>;
+type InfoNode = Node<{ label: string, preRequisite: string[], postRequisite: string[], displayMode: number, isSelected: boolean }, 'info'>;
 
 function CustomNode({ data }: NodeProps<InfoNode>) {
 
@@ -14,13 +13,16 @@ function CustomNode({ data }: NodeProps<InfoNode>) {
     const handleMouseLeave = () => { setShowTooltip(false); };
     const handleClick = () => { ;};
 
+    const isDimmed = (data.displayMode === 2) ? !data.isSelected : false;
+    
     return (
       <>
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}
              style= {{ width: '150px', display: 'flex',
                      justifyContent: 'center', alignItems: 'center', textAlign: 'center',
                      borderRadius: '8px', padding: '10px', fontSize: '12px',
-                     border: '1px solid #333', backgroundColor: '#f1f1f1', color: 'black' }}>
+                     border: '1px solid #333', backgroundColor: '#f1f1f1', color: 'black',
+                     opacity: isDimmed ? 0.3 : 1}}>
           <div>{data.label}</div>
           <Handle type="target" position={Position.Left} />
           <Handle type="source" position={Position.Right} />

@@ -22,7 +22,7 @@ function CoursemapCS() {
       </div>
       <div style={{
         width: '90vw',
-        height: '400px',
+        height: '1000px',
         boxSizing: 'border-box',
         margin: '0 5vw 0 5vw',
         border: '1px solid #cfcfcf'

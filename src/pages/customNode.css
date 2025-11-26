@@ -1,10 +1,5 @@
 .tooltip-box {
     position: absolute;
-    z-index: 10;
-    /* z-index 값을 높게 설정해줌으로써 툴팁을 다른 요소들보다 위에 표시할 수 있음 */
-    /* 지금은 tooltip이 custom node 내부에 있어서 z-index를 높게 설정하더라도 다른 custom node들 위에 표시되지 않음 */
-    /* child의 z-index 값은 parent가 만들어낸 stacking context 내부에서만 유효하기 때문 */
-    /* 수정 필요 (아마 lifting으로 해결 가능할 것 같음) */
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
