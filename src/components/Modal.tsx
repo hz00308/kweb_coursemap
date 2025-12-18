@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import './Modal.css'
 
 const Modal = ({ isModalOpen, setIsModalOpen }: { isModalOpen: string; setIsModalOpen: (courseName: string) => void }) => {
@@ -8,7 +9,7 @@ const Modal = ({ isModalOpen, setIsModalOpen }: { isModalOpen: string; setIsModa
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <div className="header-left">
-            <button className="header-view-btn">전체보기</button>
+            <NavLink to="/comments" className="header-view-btn">전체보기</NavLink>
           </div>
           <h2 className="modal-title">{isModalOpen}</h2>
           <button className="modal-close-btn" onClick={() => setIsModalOpen('')}>&times;</button>
