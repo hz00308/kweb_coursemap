@@ -73,3 +73,11 @@
     padding: 1rem;
     min-height: 100px;
 }
+
+.comment-course {
+    font-weight: 600;
+}
+
+.comment-content {
+    margin-top: 0.5rem;
+}
