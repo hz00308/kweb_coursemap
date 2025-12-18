@@ -33,7 +33,7 @@ const onNodeDrag: OnNodeDrag = (_, node) => {
   console.log('drag event', node.data);
 };
 
-function DiagramCS() {
+function DiagramCS({ setIsModalOpen }: { setIsModalOpen: (courseName: string) => void }) {
 
   const [nodes, setNodes] = useState<Node[]>(initialNodes);
   const [edges, setEdges] = useState<Edge[]>(initialEdges);
@@ -74,12 +74,17 @@ function DiagramCS() {
     [setEdges],
   );
 
+  const onNodeClick = useCallback((event: React.MouseEvent, node: Node) => {
+    if (node.data && typeof node.data.label === 'string') { setIsModalOpen(node.data.label); }
+  }, [setIsModalOpen]);
+
   return (
     <ReactFlow
       nodes={nodes}
       edges={edges}
       nodeTypes={nodeTypes}
       edgeTypes={edgeTypes}
+      onNodeClick={onNodeClick}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}

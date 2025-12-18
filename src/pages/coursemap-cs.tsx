@@ -1,8 +1,12 @@
 /* import { NavLink } from 'react-router-dom' */
 import DiagramCS from "./diagram-cs";
 import Header from "../components/Header";
+import { useState } from "react";
+import Modal from "../components/Modal";
 
 function CoursemapCS() {
+  const [isModalOpen, setIsModalOpen] = useState('');
+
   return (
     <div className="container">
       <Header />
@@ -27,8 +31,9 @@ function CoursemapCS() {
         margin: '0 5vw 0 5vw',
         border: '1px solid #cfcfcf'
       }}>
-        <DiagramCS />
+        <DiagramCS setIsModalOpen={setIsModalOpen} />
       </div>
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
     );
 }
